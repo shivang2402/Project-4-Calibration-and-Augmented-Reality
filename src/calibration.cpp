@@ -24,6 +24,11 @@ bool findAndDrawCorners(const cv::Mat &frame, cv::Mat &display,
         // Draw corners on display image
         cv::drawChessboardCorners(display, patternSize, corner_set, found);
 
+        // Draw extra thick circles so corners are visible on high-res images
+        for (size_t i = 0; i < corner_set.size(); i++) {
+            cv::circle(display, corner_set[i], 15, cv::Scalar(0, 0, 255), 5);
+        }
+
         // Print first corner info
         std::cout << "Found " << corner_set.size() << " corners. "
                   << "First: (" << corner_set[0].x << ", " << corner_set[0].y << ")" << std::endl;

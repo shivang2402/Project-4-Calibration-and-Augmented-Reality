@@ -149,8 +149,8 @@ int main(int argc, char *argv[]) {
         // Show info overlay
         std::string info = "Saved: " + std::to_string(corner_list.size());
         if (calibrated) info += " | CALIBRATED";
-        cv::putText(display, info, cv::Point(10, 30),
-                    cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2);
+        cv::putText(display, info, cv::Point(10, 60),
+                    cv::FONT_HERSHEY_SIMPLEX, 2.0, cv::Scalar(0, 255, 0), 4);
 
         cv::imshow("Calibration AR", display);
 
